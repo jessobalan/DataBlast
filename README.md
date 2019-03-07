@@ -1,37 +1,48 @@
-## Welcome to GitHub Pages
+---
+title: "Flight Landing Analysis using linear, logistic and multinomial regression"
+author: "Anthony Selva Jessobalan"
+date: "March 7, 2019"
+output: html_document
+---
 
-You can use the [editor on GitHub](https://github.com/jessobalan/jesso.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
-
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+## Background
 
-### Jekyll Themes
+This is a study to see what factors and how would they affect the landing distance of commerical flights. The data used here is a simulated data from statistical models. The motivation behind the study is to reduce the risk of [landing overruns](https://en.wikipedia.org/wiki/Category:Airliner_accidents_and_incidents_involving_runway_overruns). See two CSV files used as data source here: 
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jessobalan/jesso.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+<https://github.com/jessobalan/Flight-Landing-Analysis/blob/master/FAA1.csv> 
 
-### Support or Contact
+<https://github.com/jessobalan/Flight-Landing-Analysis/blob/master/FAA2.csv>. 
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+FAA1 has 800 data points and FAA2 has 150 data points.
+
+### Variable Dictionary:
+
+**Aircraft**: The make of an aircraft (Boeing or Airbus). 
+**Duration (in minutes)**: Flight duration between taking off and landing. The duration of a normal flight should always be greater than 40min.  
+**No_pasg**: The number of passengers in a flight.  
+**Speed_ground (in miles per hour)**: The ground speed of an aircraft when passing over the threshold of the runway. If its value is less than 30MPH or greater than 140MPH, then the landing would be considered as abnormal.  
+**Speed_air (in miles per hour)**: The air speed of an aircraft when passing over the threshold of the runway. If its value is less than 30MPH or greater than 140MPH, then the landing would be considered as abnormal.  
+**Height (in meters)**: The height of an aircraft when it is passing over the threshold of the runway. The landing aircraft is required to be at least 6 meters high at the threshold of the runway.  
+**Pitch (in degrees)**: Pitch angle of an aircraft when it is passing over the threshold of the runway.  
+**Distance (in feet)**: The landing distance of an aircraft. More specifically, it refers to the distance between the threshold of the runway and the point where the aircraft can be fully stopped. The length of the airport runway is typically less than 6000 feet.  
+
+#### Reading CSVs into R
+
+```{r import, echo=TRUE}
+FAA1<-read.csv("Flight-Landing-Analysis/FAA1.csv ",header=T)
+FAA2<-read.csv("Flight-Landing-Analysis/FAA2.csv ",header=T)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
