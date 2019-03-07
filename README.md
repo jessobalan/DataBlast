@@ -2,7 +2,7 @@
 #### Author: Anthony Selva Jessobalan
 #### Date: March 7, 2019
 
-## Background
+## 1. Background
 
 This is a study to see what factors and how would they affect the landing distance of commerical flights. The data used here is a simulated data from statistical models. The motivation behind the study is to reduce the risk of [landing overruns](https://en.wikipedia.org/wiki/Category:Airliner_accidents_and_incidents_involving_runway_overruns). See two CSV files used as data source here: 
 
@@ -23,11 +23,25 @@ FAA1 has 800 data points and FAA2 has 150 data points.
 **Pitch (in degrees)**: Pitch angle of an aircraft when it is passing over the threshold of the runway.  
 **Distance (in feet)**: The landing distance of an aircraft. More specifically, it refers to the distance between the threshold of the runway and the point where the aircraft can be fully stopped. The length of the airport runway is typically less than 6000 feet.  
 
-#### Reading CSVs into R
+## 2. Exploratory Data Analysis
+### 2.1 Reading CSVs into R
 
 ```{r import, echo=TRUE}
 FAA1<-read.csv("Flight-Landing-Analysis/FAA1.csv ",header=T)
 FAA2<-read.csv("Flight-Landing-Analysis/FAA2.csv ",header=T)
+```
+### 2.2 Understanding the data
+
+```{r  echo=TRUE}
+head(FAA1)
+class(FAA1)
+str(FAA1) 
+summary(FAA1)
+tail(FAA1)
+head(FAA2) 
+str(FAA2) 
+summary(FAA2)
+tail(FAA2)
 ```
 
 ## Including Plots
