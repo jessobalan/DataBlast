@@ -1,6 +1,6 @@
 # "Flight Landing Analysis using linear, logistic and multinomial regression"
-### author: "Anthony Selva Jessobalan"
-### date: "March 7, 2019"
+#### Author: Anthony Selva Jessobalan
+#### Date: March 7, 2019
 
 ## Background
 
