@@ -1,13 +1,6 @@
----
-title: "Flight Landing Analysis using linear, logistic and multinomial regression"
-author: "Anthony Selva Jessobalan"
-date: "March 7, 2019"
-output: html_document
----
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+# "Flight Landing Analysis using linear, logistic and multinomial regression"
+### author: "Anthony Selva Jessobalan"
+### date: "March 7, 2019"
 
 ## Background
 
