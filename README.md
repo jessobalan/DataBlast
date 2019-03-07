@@ -32,7 +32,7 @@ FAA2<-read.csv("Flight-Landing-Analysis/FAA2.csv ",header=T)
 ```
 ### 2.2 Understanding the data
 
-```{r  echo=TRUE}
+```r
 head(FAA1)
 class(FAA1)
 str(FAA1) 
